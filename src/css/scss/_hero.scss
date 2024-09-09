@@ -1,0 +1,87 @@
+@import '_var.scss';
+@import '_mixin.scss';
+.hero {
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 145px 65px 60px;
+    position: relative;
+    background-image: url('../img/hero.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $colorwhite;
+    @media (max-width: 1024px) {
+        padding: 0 15px 35px 30px;
+        background-image: url('../img/hero_1024.png');
+    }
+    @media (max-width: 768px) {
+        padding: 0 0 35px 30px;
+        background-image: url('../img/hero_768.png');
+    }
+    @media (max-width: 586px) {
+        padding: 0 45px 30px 30px;
+        background-image: url('../img/hero_586.png');
+    }
+    &-wrap {
+        padding-top: 41px;
+        @media (max-width: 1024px) {
+            padding-top: 34px;
+        }
+        @include grid30();
+        grid-template-columns: repeat(2,
+        1fr);
+        @media (max-width: 586px) {
+            padding-top: 30px;
+            gap: 35px;
+            grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+            grid-template-rows: 422px 1fr;
+        }
+    }
+    &__teg {
+        top: 15px;
+        right: 15px;
+        padding: 7px 15px;
+        @include teg();
+        @media (max-width: 586px) {
+            padding: 4px 7px;
+        }
+    }
+    &__text {
+        @include fontRoboto400();
+        @include font1619;
+        @media (max-width: 1024px) {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            margin-bottom: 15px;
+        }
+        @media (max-width: 586px) {
+            margin-bottom: 10px;
+            @include font1416();
+        }
+    }
+    &__title {
+        margin-bottom: 20px;
+        @include fontTT700();
+        font-size: 36px;
+        line-height: 37px;
+        @media (max-width: 1024px) {
+            font-size: 34px;
+            line-height: 34px;
+        }
+        @media (max-width: 768px) {
+            line-height: 31px;
+        }
+        @media (max-width: 586px) {
+            margin-bottom: 15px;
+            font-size: 24px;
+            line-height: 26px;
+        }
+    }
+    &__link {
+        @include btn();
+        max-width: 159px;
+        @media (max-width: 586px) {
+            max-width: 145px;
+        }
+    }
+}

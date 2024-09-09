@@ -1,0 +1,86 @@
+@import '_var.scss';
+@import '_mixin.scss';
+.footer {
+    position: relative;
+    background-color: $colorblack;
+    &-logo {
+        &__icon {
+            height: auto;
+            @include logo();
+        }
+    }
+    &::before {
+        @include before();
+    }
+    span {
+        display: block;
+    }
+    &__container {
+        justify-content: space-between;
+        padding-top: 30px;
+        padding-bottom: 16px;
+        @media (max-width: 1024px) {
+            padding-top: 33px;
+        }
+        @media (max-width: 586px) {
+            position: relative;
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+    }
+    &-left {
+        @media (max-width: 1024px) {
+            flex-grow: 0.3;
+        }
+        &__text {
+            @include fontTT400();
+            @include font1418();
+            color: $colorlightgrey;
+            @media (max-width: 586px) {
+                font-size: 10px;
+                line-height: 13px;
+            }
+        }
+    }
+    &-center {
+        flex-grow: 0.25;
+        @media (max-width: 1024px) {
+            flex-grow: 0;
+        }
+        @media (max-width: 768px) {
+            display: none;
+        }
+        &__text {
+            @include textR4001622();
+            &--top {
+                color: $colorgreysvg;
+            }
+            &--bottom {
+                color: $colorgrey;
+            }
+        }
+    }
+    &-right {
+        @media (max-width: 586px) {
+            margin-bottom: 45px;
+        }
+        &__text {
+            margin-bottom: 8px;
+            @include textR4001622();
+            color: $colorgreysvg;
+        }
+    }
+    &__socails {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .social__item {
+        margin-right: 0;
+    }
+    &-logo {
+        @media (max-width: 586px) {
+            display: block;
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Pass</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="img/favicon.svg" rel="shortcut icon" type="image/x-icon">
+
+</head>
+
+<body>
+    <?xml version="1.0" encoding="utf-8"?><svg style="display: none;" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style>:root>svg{display:none}:root>svg:target{display:block}</style><svg viewBox="0 0 20 18" id="burger" xmlns="http://www.w3.org/2000/svg"><path  d="M0 0h20v2H0zM0 8h20v2H0zM0 16h10v2H0z"/></svg>
+    <svg viewBox="0 0 14 14" id="calendar" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.667 1.75h-.584V.583H9.917V1.75H4.083V.583H2.917V1.75h-.584a1.17 1.17 0 00-1.166 1.167v9.333a1.17 1.17 0 001.166 1.167h9.334a1.17 1.17 0 001.166-1.167V2.917a1.17 1.17 0 00-1.166-1.167zm0 10.5H2.333V4.667h9.334v7.583z"  />
+        </svg><svg viewBox="0 0 30 30" id="fb" xmlns="http://www.w3.org/2000/svg"><path d="M15 0C6.75 0 0 6.762 0 15.09 0 22.62 5.49 28.87 12.66 30V19.458H8.85V15.09h3.81v-3.328c0-3.78 2.235-5.858 5.67-5.858 1.635 0 3.345.286 3.345.286v3.72h-1.89c-1.86 0-2.445 1.16-2.445 2.349v2.831h4.17l-.675 4.368H17.34V30a14.985 14.985 0 009.075-5.105A15.097 15.097 0 0030 15.09C30 6.762 23.25 0 15 0z" /></svg>
+    <svg viewBox="0 0 20 20" id="footer-close" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="10" cy="10" r="10"  />
+            <path fill="#fff" d="M6.207 5.5l8.485 8.485-.707.707L5.5 6.207z" />
+            <path fill="#fff" d="M5.59 13.985L14.077 5.5l.707.707-8.485 8.486z" />
+            </svg><svg viewBox="0 0 30 30" id="instagram" xmlns="http://www.w3.org/2000/svg"><path d="M12.129 15a2.871 2.871 0 105.742 0 2.871 2.871 0 00-5.742 0z" /><path d="M8.286 9.92c.138-.374.358-.712.644-.99.278-.286.616-.507.99-.645.304-.118.76-.258 1.6-.296.908-.041 1.18-.05 3.48-.05s2.573.008 3.48.05c.84.038 1.297.178 1.6.296.374.138.713.359.99.645.286.278.506.616.645.99.118.303.258.76.296 1.6.042.908.05 1.18.05 3.48s-.008 2.572-.05 3.48c-.038.84-.178 1.296-.296 1.6a2.67 2.67 0 01-.645.99 2.667 2.667 0 01-.99.645c-.303.118-.76.258-1.6.296-.907.042-1.18.05-3.48.05s-2.572-.008-3.48-.05c-.84-.038-1.296-.178-1.6-.296a2.852 2.852 0 01-1.634-1.635c-.118-.304-.259-.76-.297-1.6-.041-.908-.05-1.18-.05-3.48s.009-2.572.05-3.48c.038-.84.178-1.296.297-1.6zM15 19.423a4.423 4.423 0 100-8.846 4.423 4.423 0 000 8.846zm-4.598-7.987a1.034 1.034 0 100-2.068 1.034 1.034 0 000 2.068z" /><path d="M15 0c8.283 0 15 6.717 15 15 0 8.283-6.717 15-15 15-8.283 0-15-6.717-15-15C0 6.717 6.717 0 15 0zM6.439 18.551c.041.917.187 1.543.4 2.09a4.404 4.404 0 002.52 2.52c.547.213 1.173.358 2.09.4.918.042 1.212.052 3.55.052 2.34 0 2.633-.01 3.552-.052.917-.042 1.543-.187 2.09-.4a4.22 4.22 0 001.526-.994c.438-.43.777-.95.994-1.525.213-.548.358-1.174.4-2.09.042-.92.052-1.213.052-3.552 0-2.34-.01-2.633-.052-3.551-.041-.917-.187-1.543-.4-2.09a4.22 4.22 0 00-.994-1.526 4.218 4.218 0 00-1.525-.994c-.548-.213-1.174-.358-2.09-.4-.92-.042-1.213-.052-3.552-.052-2.34 0-2.633.01-3.551.052-.917.042-1.543.187-2.09.4a4.222 4.222 0 00-1.527.994 4.22 4.22 0 00-.993 1.525c-.213.548-.359 1.174-.4 2.09-.042.92-.052 1.213-.052 3.552 0 2.34.01 2.633.052 3.551z" /></svg>
+    <svg viewBox="0 0 25 25" id="search" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24.911 22.814l-5.057-4.457c1.487-1.98 2.292-4.403 2.292-6.95 0-3.05-1.156-5.909-3.245-8.065C16.812 1.186 14.03 0 11.073 0c-2.957 0-5.74 1.19-7.829 3.342C1.152 5.494 0 8.357 0 11.407c0 3.045 1.155 5.912 3.244 8.064 2.09 2.156 4.869 3.343 7.829 3.343 2.473 0 4.82-.83 6.743-2.358l5.058 4.453a.3.3 0 00.214.091.294.294 0 00.214-.091l1.61-1.654a.312.312 0 00.088-.22.319.319 0 00-.089-.221zM16.92 17.43c-1.565 1.608-3.639 2.494-5.846 2.494-2.207 0-4.282-.886-5.847-2.494a8.603 8.603 0 01-2.42-6.023c0-2.274.86-4.415 2.42-6.023 1.565-1.608 3.64-2.494 5.847-2.494 2.207 0 4.285.882 5.846 2.494a8.602 8.602 0 012.422 6.023c0 2.274-.86 4.414-2.422 6.023z"
+                    />
+                </svg><svg viewBox="0 0 18 18" id="tel" xmlns="http://www.w3.org/2000/svg"><path d="M16.343 12.098a10.49 10.49 0 01-3.236-.513.896.896 0 00-.926.22l-1.44 1.806c-2.593-1.238-5.023-3.575-6.315-6.261l1.787-1.522a.935.935 0 00.22-.935 10.223 10.223 0 01-.513-3.236.916.916 0 00-.907-.907H1.84C1.346.75.75.97.75 1.657c0 8.516 7.086 15.593 15.593 15.593.65 0 .907-.578.907-1.082v-3.162a.916.916 0 00-.907-.908z" /></svg>
+    <svg viewBox="0 0 30 30" id="vk" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 0C6.716 0 0 6.716 0 15c0 8.284 6.716 15 15 15 8.284 0 15-6.716 15-15 0-8.284-6.716-15-15-15zm7.609 16.622c.699.683 1.439 1.326 2.066 2.08.278.333.54.677.74 1.065.285.553.027 1.159-.467 1.192l-3.073-.001c-.794.066-1.426-.255-1.958-.797-.425-.433-.82-.894-1.229-1.342a2.871 2.871 0 00-.553-.492c-.42-.272-.783-.189-1.023.249-.245.445-.3.939-.324 1.434-.033.725-.252.914-.979.948-1.554.073-3.028-.163-4.398-.946-1.208-.69-2.144-1.666-2.959-2.77-1.587-2.152-2.803-4.514-3.895-6.944-.246-.547-.066-.84.538-.85a85.522 85.522 0 013.009-.002c.408.007.678.24.835.625.542 1.334 1.206 2.603 2.039 3.78.222.313.448.625.77.846.357.245.628.164.796-.233.107-.253.154-.523.177-.794.08-.927.09-1.854-.049-2.777-.086-.578-.41-.951-.987-1.06-.293-.056-.25-.165-.108-.332.248-.29.48-.47.944-.47h3.472c.547.107.67.353.744.904l.003 3.859c-.006.213.107.845.49.985.307.101.51-.145.693-.34.833-.883 1.426-1.926 1.957-3.005.235-.476.437-.969.634-1.462.146-.365.373-.545.785-.539l3.343.004c.099 0 .199.001.296.018.564.097.718.339.544.889-.275.863-.808 1.583-1.329 2.304-.558.772-1.154 1.517-1.707 2.293-.508.709-.468 1.066.163 1.681z"
+                         />
+                    </svg>
+    </svg>
+    <header class="header">
+        <div class="container flex header__container">
+            <a class="header-logo">
+                <img class="header-logo__icon" src="img/Logo.svg" alt="Логотип">
+            </a>
+            <div class="menu">
+                <button class="menu__btn btn" tabindex="-1">
+                    <svg class="menu__burger" tabindex="0">
+                        <use xlink:href="#burger"></use>
+                    </svg>
+                </button>
+                <nav class="nav" title="Главное меню">
+                    <ul class="nav__list flex">
+                        <li class="nav__item nav__item--close">
+                            <button class="nav__btn btn" tabindex="-1">
+                                <svg class="nav__close" tabindex="0">
+                                    <use xlink:href="#footer-close"></use>
+                                </svg>       
+                            </button>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                О студии
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#projects" class="nav__link">
+                                Наши проекты
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#service" class="nav__link">
+                                Услуги
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#master-class" class="nav__link">
+                                Мастер-классы
+                            </a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contacts" class="nav__link">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="menu__tel">
+                        <svg>
+                            <use xlink:href="#tel"></use>
+                        </svg> +7 (495) 42-423-532
+                    </div>
+                </nav>
+            </div>
+            <ul class="social flex">
+                <li class="social__item">
+                    <a href="#" class="social__link social__link--insta" aria-label="Перейти в Инстаграм" tabindex="-1">
+                        <svg class="social__image" tabindex="0">
+                            <use xlink:href="#instagram"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#" class="social__link" aria-label="Перейти в Фейсбук" tabindex="-1">
+                        <svg class="social__image" tabindex="0">
+                            <use xlink:href="#fb"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="#" class="social__link" aria-label="Перейти во Вконтакте" tabindex="-1">
+                        <svg class="social__image" tabindex="0">
+                            <use xlink:href="#vk"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <div class="search">
+                <button class="search__btn btn" tabindex="-1">
+                    <svg class="search__icon" tabindex="0">
+                        <use xlink:href="#search"></use>
+                    </svg>
+                </button>
+                <div class="search__menu">
+                    <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="search__form">
+                        <input class="search__input" type="text" name="search" placeholder="Что будем иcкать?">
+                    </form>
+                    <button class="search-close btn" tabindex="-1">
+                        <svg class="search-close__icon" tabindex="0">
+                            <use xlink:href="#footer-close"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom"></div>
+    </header>
+    <main class="main">
+        <div class="hero-wrap container">
+            <article class="hero flex">
+                <span class="hero__teg teg">
+                    #мастеркласс
+                </span>
+                <p class="hero__text">
+                    Мастер-класс от Игоря Робова
+                </p>
+                <h1 class="hero__title">
+                    Неоновый фотосет 2.0 <br> 7 июля 20:00
+                </h1>
+                <a class="hero__link" href="#">
+                    Узнать больше
+                </a>
+            </article>
+            <section class="works">
+                <h2 class="works__title">
+                    Работы участников предыдущего мастер-класса
+                </h2>
+                <ul class="works__list">
+                    <li class="works__item">
+                        <picture>
+                            <source srcset="img/hero2_320.png" media="(max-width: 586px)">
+                            <source srcset="img/hero2_768.png" media="(max-width: 768px)">
+                            <source srcset="img/hero2_1024.png" media="(max-width: 1024px)">
+                            <img src="img/hero2.png" alt="">
+                        </picture>
+                    </li>
+                    <li class="works__item">
+                        <picture>
+                            <source srcset="img/hero3_320.png" media="(max-width: 586px)">
+                            <source srcset="img/hero3_768.png" media="(max-width: 768px)">
+                            <source srcset="img/hero3_1024.png" media="(max-width: 1024px)">
+                            <img src="img/hero3.png" alt="">
+                        </picture>
+                    </li>
+                    <li class="works__item">
+                        <picture>
+                            <source srcset="img/hero4_320.png" media="(max-width: 586px)">
+                            <source srcset="img/hero4_768.png" media="(max-width: 768px)">
+                            <source srcset="img/hero4_1024.png" media="(max-width: 1024px)">
+                            <img src="img/hero4.png" alt="">
+                        </picture>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <section class="about" id="about">
+            <div class="container about__container">
+                <h2 class="about__title">
+                    О студии
+                </h2>
+                <div class="about__grid">
+                    <p class="about__desc">
+                        В&nbsp;рамках спецификации современных стандартов, интерактивные прототипы, инициированные исключительно синтетически, ограничены исключительно образом мышления. Предварительные выводы неутешительны: высокотехнологичная концепция общественного уклада
+                        требует от нас анализа соответствующих условий активизации! Следует отметить, что семантический разбор внешних противодействий фиксирует необходимость распределения внутренних резервов и ресурсов. Безусловно, граница обучения кадров
+                        предоставляет широкие возможности для первоочередных требований. Повседневная практика показывает, что глубокий уровень погружения предполагает независимые способы реализации новых принципов формирования материально&#8209;технической
+                        и кадровой базы. Приятно, граждане, наблюдать, как явные признаки институционализации являются только методом политического участия и нарушающими общечеловеческие нормы этики.
+                    </p>
+                    <div class="about__right">
+                        <div class="about__photo"></div>
+                        <div class="about__form">
+                            <h3 class="about__title about__title--form">
+                                Подписаться на рассылку
+                            </h3>
+                            <form class="about-form" action="https://jsonplaceholder.typicode.com/posts" method="POST">
+                                <input class="about-form__input" data-validate-field="mail" type="email" name="email" placeholder="E-mail">
+                                <button class="btn about-form__btn">
+                                    Отправить
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="projects" id="projects">
+            <div class="container projects__container">
+                <h2 class="projects__title">
+                    Наши проекты
+                </h2>
+                <ul class="projects__list">
+                    <li class="projects__item projects__item--small flex">
+                        <picture>
+                            <source srcset="img/projects1_320.png" media="(max-width: 586px)">
+                            <source srcset="img/projects1_1024.png" media="(max-width: 1024px)">
+                            <img class="projects__img" src="img/projects1.png" alt="">
+                        </picture>
+                        <span class="projects__teg">
+                            #пейзаж
+                        </span>
+                        <p class="projects__text projects__text--small">
+                            Синтетически, смешаны с не уникальными данными до степени...
+                        </p>
+                        <span class="projects__data">
+                            <svg class="projects__icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            16 июня
+                        </span>
+                    </li>
+                    <li class="projects__item projects__item--small flex">
+                        <picture>
+                            <source srcset="img/projects2_320.png" media="(max-width: 586px)">
+                            <source srcset="img/projects2_1024.png" media="(max-width: 1024px)">
+                            <img class="projects__img" src="img/projects2.png" alt="">
+                        </picture>
+                        <span class="projects__teg">
+                            #портрет
+                        </span>
+                        <p class="projects__text projects__text--small">
+                            В своём стремлении улучшить опыт мы упускаем, что явные...
+                        </p>
+                        <span class="projects__data">
+                            <svg class="projects__icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            28 мая
+                        </span>
+                    </li>
+                    <li class="projects__item projects__item--small flex">
+                        <picture>
+                            <source srcset="img/projects3_320.png" media="(max-width: 586px)">
+                            <source srcset="img/projects3_768.png" media="(max-width: 768px)">
+                            <source srcset="img/projects3_1024.png" media="(max-width: 1024px)">
+                            <img class="projects__img" src="img/projects3.png" alt="">
+                        </picture>
+                        <span class="projects__teg">
+                            #предмет
+                        </span>
+                        <p class="projects__text projects__text--small">
+                            Равным образом, высокое качество позиционных высокотехнологичная концепция общественного уклада
+                        </p>
+                        <span class="projects__data">
+                            <svg class="projects__icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            14 мая
+                        </span>
+                    </li>
+                    <li class="projects__item projects__item--big">
+                        <picture>
+                            <source srcset="img/projects4_320.png" media="(max-width: 586px)">
+                            <source srcset="img/projects4_768.png" media="(max-width: 768px)">
+                            <source srcset="img/projects4_1024.png" media="(max-width: 1024px)">
+                            <img src="img/projects4.png" alt="">
+                        </picture>
+                        <span class="projects__teg">
+                            #fuji
+                        </span>
+                        <div class="projects__desc  flex">
+                            <span class="projects__data projects__data--big">
+                                <svg class="projects__icon">
+                                    <use xlink:href="#calendar"></use>
+                                </svg>
+                                9 апреля
+                            </span>
+                            <h3 class="projects__title projects__title--big">
+                                Cемантический разбор
+                            </h3>
+                            <p class="projects__text projects__text--big">
+                                В рамках спецификации современных стандартов, интерактивные прототипы
+                            </p>
+                            <a class="btn projects__btn" tabindex="0">
+                                О проекте
+                            </a>
+                        </div>
+                    </li>
+                    <li class="projects__item projects__item--big">
+                        <picture>
+                            <source srcset="img/projects5_320.png" media="(max-width: 586px)">
+                            <source srcset="img/projects5_768.png" media="(max-width: 768px)">
+                            <source srcset="img/projects5_1024.png" media="(max-width: 1024px)">
+                            <img src="img/projects5.png" alt="">
+                        </picture>
+                        <span class="projects__teg">
+                            #проектзабвение
+                        </span>
+                        <div class="projects__desc  flex">
+                            <span class="projects__data projects__data--big">
+                                <svg class="projects__icon">
+                                    <use xlink:href="#calendar"></use>
+                                </svg>
+                                20 марта
+                            </span>
+                            <h3 class="projects__title projects__title--big">
+                                Забвение
+                            </h3>
+                            <p class="projects__text projects__text--big">
+                                Играет важную роль в формировании глубокомысленных рассуждений
+                            </p>
+                            <a class="btn projects__btn" tabindex="0">
+                                О проекте
+                            </a>
+                        </div>
+                    </li>
+                    <li class="projects__item projects__item--small flex">
+                        <picture>
+                            <source srcset="img/projects6_320.png" media="(max-width: 586px)">
+                            <source srcset="img/projects6_1024.png" media="(max-width: 1024px)">
+                            <img class="projects__img" src="img/projects6.png" alt="">
+                        </picture>
+                        <span class="projects__teg">
+                            #ретушь
+                        </span>
+                        <p class="projects__text projects__text--small">
+                            Как принято считать, многие известные личности и по сей день остаются уделом либералов...
+                        </p>
+                        <span class="projects__data">
+                            <svg class="projects__icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            9 марта
+                        </span>
+                    </li>
+                    <li class="projects__item projects__item--small flex">
+                        <picture>
+                            <source srcset="img/projects7_320.png" media="(max-width: 586px)">
+                            <source srcset="img/projects7_1024.png" media="(max-width: 1024px)">
+                            <img class="projects__img" src="img/projects7.png" alt="">
+                        </picture>
+                        <span class="projects__teg">
+                            #портрет
+                        </span>
+                        <p class="projects__text projects__text--small">
+                            С учётом сложившейся международной обстановки, новая модель организационной...
+                        </p>
+                        <span class="projects__data">
+                            <svg class="projects__icon">
+                                <use xlink:href="#calendar"></use>
+                            </svg>
+                            1 марта
+                        </span>
+
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="contacts" id="contacts">
+            <div class="container contacts__container">
+                <h2 class="contacts__title">
+                    Контакты
+                </h2>
+                <div class="contacts__grid">
+                    <div class="contacts__map" id="map">
+                        <div class="contacts-address">
+                            <button class="contacts-address__btn btn" tabindex="-1">
+                                <svg class="contacts__icon" tabindex="0">
+                                    <use xlink:href="#footer-close"></use>
+                                </svg>
+                            </button>
+                            <h3 class="contacts-address__title">
+                                Студия “High pass”
+                            </h3>
+                            <address class="contacts__address">
+                                <span>
+                                    107045, Москва, Даев переулок, дом 41, бизнес-центр &laquo;Даев Плаза&raquo;, этаж 8, офис &#8470;&nbsp;82
+                                </span>
+                                <span class="contacts-address__tel">
+                                    <svg class="contacts__icon">
+                                        <use xlink:href="#tel"></use>
+                                    </svg>
+                                    +7 (495) 42-423-532
+                                </span>
+                            </address>
+
+                        </div>
+                    </div>
+                    <div class="contacts__right">
+                        <h3 class="contacts__title contacts__title--middle">
+                            Оставить заявку
+                        </h3>
+                        <p class="contacts__text">
+                            Оставьте ваши данные, указав в графе “Комментарий” желаемые время и дату съемки или другого мероприятия </p>
+                        <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="contacts-form">
+                            <div class="contacts-form__input contacts-form__input--name">
+                                <input data-validate-field="name" type="text" name="Имя" placeholder="Имя" class="contacts__input contacts__input--name">
+                            </div>
+                            <div class="contacts-form__input contacts-form__input--mail">
+                                <input data-validate-field="mail" type="email" name="email" placeholder="E-mail" class="contacts__input contacts__input--email">
+                            </div>
+                            <textarea class="contacts__input contacts__input--text" name="comments" placeholder="Комментарий"></textarea>
+                            <button class="btn contacts__btn" type="submit">
+                                Отправить
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="container footer__container flex">
+                <div class="footer-left">
+                    <a class="footer-logo">
+                        <img class="footer-logo__icon" src="img/Logo.svg" alt="Логотип">
+                    </a>
+                    <span class="footer-left__text">
+                        Фотостудия High pass<sup class="reg">&reg;</sup> 2018-2020
+                    </span>
+                </div>
+                <div class="footer-center">
+                    <span class="footer-center__text footer-center__text--top">
+                        Которая из моих фотографий самая любимая? <br>Та, которую я собираюсь снять завтра.
+                    </span>
+                    <span class="footer-center__text footer-center__text--bottom">
+                        &copy;&nbsp;Имоджен Каннингем
+                    </span>
+                </div>
+                <div class="footer-right">
+                    <span class="footer-right__text">
+                        Больше интересного:
+                    </span>
+                    <ul class="social footer__socails flex">
+                        <li class="social__item">
+                            <a href="#" class="social__link social__link--insta" aria-label="Перейти в Инстаграм" tabindex="-1">
+                                <svg class="social__image" tabindex="0">
+                                    <use xlink:href="#instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="#" class="social__link" aria-label="Перейти в Фейсбук" tabindex="-1">
+                                <svg class="social__image" tabindex="0">
+                                    <use xlink:href="#fb"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__item">
+                            <a href="#" class="social__link" aria-label="Перейти во Вконтакте" tabindex="-1">
+                                <svg class="social__image" tabindex="0">
+                                    <use xlink:href="#vk"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="resources/just-validate.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+@import '_var.scss';
+@import '_mixin.scss';
+.works {
+    &__list {
+        @include grid30();
+        grid-template-columns: repeat(2, 1fr);
+        @include list-reset();
+    }
+    &__item {
+        &:first-child {
+            grid-column: 1/3;
+        }
+    }
+    &__title {
+        margin-bottom: 17px;
+        margin-top: -5px;
+        @include fontTT700();
+        font-size: 24px;
+        line-height: 25px;
+        color: $colorblack;
+        @media (max-width: 1024px) {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            margin-bottom: 12px;
+            font-size: 22px;
+            line-height: 23px;
+        }
+        @media (max-width: 586px) {
+            font-size: 18px;
+            line-height: 19px;
+        }
+    }
+}

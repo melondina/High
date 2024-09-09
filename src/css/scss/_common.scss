@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto-Bold'), url('/src/resources/fonts/Roboto-Bold.woff2') format('woff2'), url('/src/resources/fonts/Roboto-Bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto-Regular'), url('/src/resources/fonts/Roboto-Regular.woff2') format('woff2'), url('/src/resources/fonts/Roboto-Regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TTFirsNeue';
+    src: local('TTFirsNeue-Bold'), url('/src/resources/fonts/TTFirsNeue-Bold.woff2') format('woff2'), url('/src/resources/fonts/TTFirsNeue-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TTFirsNeue';
+    src: local('TTFirsNeue-Regular'), url('/src/resources/fonts/TTFirsNeue-Regular.woff2') format('woff2'), url('/src/resources/fonts/TTFirsNeue-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body {
+    max-width: 1920px;
+}
+
+a,
+input,
+button,
+textarea {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    &:focus-visible,
+    &:focus {
+        outline: 0;
+        border: none;
+    }
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    padding: 1px;
+}
+
+.container {
+    padding: 0 315px;
+    @media (max-width: 1800px) {
+        padding: 0 50px;
+    }
+    @media (max-width: 1024px) {
+        padding: 0 31px;
+    }
+    @media (max-width: 768px) {
+        padding: 0 27px;
+    }
+    @media (max-width: 586px) {
+        padding: 0 21px;
+    }
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 65px;
+    @media (max-width: 586px) {
+        gap: 45px;
+    }
+}

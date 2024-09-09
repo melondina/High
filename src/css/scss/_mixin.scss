@@ -1,0 +1,253 @@
+@import '_var.scss';
+@mixin fontTT400 {
+    font-family: 'TTFirsNeue', sans-serif;
+    font-weight: 400;
+}
+
+@mixin fontTT700 {
+    font-family: 'TTFirsNeue', sans-serif;
+    font-weight: 700;
+}
+
+@mixin fontRoboto700 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+@mixin fontRoboto400 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+@mixin font1619 {
+    font-size: 16px;
+    line-height: 19px;
+}
+
+@mixin font1416 {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+@mixin list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin svg30 {
+    width: 30px;
+    height: 30px;
+}
+
+@mixin svg25 {
+    width: 25px;
+    height: 25px;
+}
+
+@mixin svg20 {
+    width: 20px;
+    height: 20px;
+}
+
+@mixin svg23 {
+    width: 23px;
+    height: 23px;
+}
+
+@mixin transition {
+    transition: all .3s ease;
+}
+
+@mixin svgef {
+    &:hover {
+        fill: $colororange;
+    }
+    &:focus-visible {
+        fill: $colorfocus;
+    }
+    &:active {
+        fill: $coloractive;
+    }
+}
+
+@mixin btn {
+    max-width: 126px;
+    padding: 15px 22px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: $colorwhite;
+    background-color: $colororange;
+    outline: 3px solid transparent;
+    outline-offset: -3px;
+    transition: all .3s ease;
+    &:hover {
+        background-color: $colorfocus;
+    }
+    &:focus-visible {
+        outline-color: $coloractive;
+    }
+    &:active {
+        background-color: $coloractive;
+    }
+    @media (max-width: 586px) {
+        max-width: 115px;
+        padding: 12px 22px;
+        font-size: 14px;
+        line-height: 16px;
+    }
+}
+
+@mixin input {
+    padding-left: 23px;
+    @include fontRoboto400();
+    @include font1619();
+    color: $colorwhite;
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+    transition: all .3s ease;
+    &::placeholder {
+        @include fontRoboto400();
+        @include font1619();
+        color: $colorgreysvg;
+        @media (max-width: 586px) {
+            @include font1416();
+        }
+    }
+    &:hover {
+        &::placeholder {
+            color: $colororange;
+        }
+    }
+    &:focus-visible {
+        outline-color: $colororange;
+    }
+}
+
+@mixin title {
+    @include fontTT700();
+    font-size: 24px;
+    line-height: 31px;
+    @media (max-width: 586px) {
+        font-size: 18px;
+        line-height: 23px;
+    }
+}
+
+@mixin teg {
+    position: absolute;
+    background-color: #333;
+    @include fontRoboto400();
+    @include font1416();
+    @media (max-width: 586px) {
+        top: 5px;
+        right: 5px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+@mixin font1622 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+@mixin projectsTextSmall {
+    height: 44px;
+    @media (max-width: 768px) {
+        height: 66px;
+    }
+    @media (max-width: 586px) {
+        height: 44px;
+    }
+}
+
+@mixin grid30 {
+    display: grid;
+    gap: 30px;
+}
+
+@mixin flexColSpace {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+@mixin title2 {
+    @include fontTT400();
+    font-size: 24px;
+    line-height: 22px;
+    color: $colorwhite;
+    @media (max-width: 586px) {
+        font-size: 18px;
+    }
+}
+
+@mixin textAddress {
+    @include fontRoboto400();
+    color: $colorgreysvg;
+    font-size: 16px;
+    line-height: 28px;
+    @media (max-width: 586px) {
+        font-size: 14px;
+    }
+}
+
+@mixin navText {
+    @include fontTT400 ();
+    font-size: 16px;
+    line-height: 21px;
+    color: $colorwhite;
+}
+
+@mixin textR4001622 {
+    @include fontRoboto400();
+    font-size: 16px;
+    line-height: 22px;
+}
+
+@mixin textR4001222 {
+    @include fontRoboto400();
+    font-size: 12px;
+    line-height: 22px;
+}
+
+@mixin font1418 {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+@mixin logo {
+    width: auto;
+    @media (max-width: 1024px) {
+        width: 166px;
+    }
+    @media (max-width: 586px) {
+        width: 111px;
+    }
+}
+
+@mixin before {
+    display: none;
+    content: "";
+    background-color: #4A4A4A;
+    position: absolute;
+    bottom: 0;
+    min-height: 62px;
+    width: 100%;
+    @media (max-width: 586px) {
+        display: block;
+    }
+}
+
+@mixin validateForm {
+    position: absolute;
+    top: 0;
+    padding-left: 20px;
+    padding-top: 5px;
+    @include fontRoboto400();
+    font-size: 9px;
+    line-height: 11px;
+}

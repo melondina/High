@@ -1,0 +1,176 @@
+@import '_var.scss';
+@import '_mixin.scss';
+.contacts {
+    &__title {
+        @include title();
+        margin-bottom: 22px;
+        @media (max-width: 586px) {
+            margin-bottom: 14px;
+        }
+        color: $colorblack;
+        &--middle {
+            @include title2();
+            margin-bottom: 5px;
+            color: $colorblack;
+            @media (max-width: 586px) {
+                margin-bottom: 7px;
+            }
+        }
+    }
+    &-form {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 50px) 150px 50px;
+        gap: 20px;
+        @media (max-width: 586px) {
+            grid-template-rows: repeat(2, 40px) 150px 40px;
+        }
+        &__input--name,
+        &__input--mail {
+            position: relative;
+            .js-validate-error-label {
+                @include validateForm();
+            }
+        }
+    }
+    &__input {
+        width: 100%;
+        height: 100%;
+        @include input();
+        background-color: $colorlightgrey;
+        color: $colorblack;
+        &::placeholder {
+            color: $colordata;
+        }
+        &--text {
+            padding-top: 15px;
+            @media (max-width: 586px) {
+                padding-top: 12px;
+            }
+        }
+    }
+    &__btn {
+        @include btn();
+    }
+    &__text {
+        margin-bottom: 10px;
+        @media (max-width: 586px) {
+            margin-bottom: 16px;
+            @include font1418();
+        }
+        @include textR4001622();
+        color: $colordata;
+    }
+    &__grid {
+        @include grid30();
+        grid-template-columns: 850px 1fr;
+        grid-template-rows: 460px;
+        @media (max-width: 1316px) {
+            grid-template-columns: 590px 1fr;
+        }
+        @media (max-width: 888px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 460px 1fr;
+            gap: 25px;
+        }
+        @media (max-width: 586px) {
+            grid-template-rows: 472px 1fr;
+        }
+    }
+    &__map {
+        position: relative;
+        [class*="ground-pane"] {
+            filter: grayscale(1)
+        }
+        @media (max-width: 768px) {
+            width: 100%;
+        }
+        @media (max-width: 586px) {
+            margin-right: calc((-100vw + 100%) / 2);
+            margin-left: calc((-100vw + 100%) / 2);
+            width: auto;
+        }
+    }
+    &__right {
+        @media (max-width: 768px) {
+            max-width: 466px;
+        }
+    }
+    &__address {
+        @include textAddress();
+        font-style: normal;
+        @media (max-width: 586px) {
+            @include font1418();
+        }
+    }
+    &-address {
+        background: rgba(32, 32, 32, 0.85);
+        position: absolute;
+        z-index: 1;
+        height: 100%;
+        width: 410px;
+        padding: 175px 50px 0 60px;
+        @media (max-width: 1024px) {
+            bottom: -5px;
+            width: 100%;
+            height: auto;
+            padding: 25px 45% 21px 30px;
+        }
+        @media (max-width: 768px) {
+            bottom: 0;
+            padding-right: 35%;
+            padding-top: 30px;
+        }
+        @media (max-width: 586px) {
+            padding: 26px 30px 14px 19px;
+        }
+        &__btn {
+            position: absolute;
+            z-index: 2;
+            top: 20px;
+            right: 20px;
+            svg {
+                @include svg20();
+                fill: $colorgreyclose;
+                @include transition();
+                @include svgef();
+            }
+        }
+        &__title {
+            margin-bottom: 5px;
+            @include title2();
+            @media (max-width: 586px) {
+                margin-bottom: 10px;
+            }
+        }
+        &__tel {
+            display: block;
+            @include navText();
+            @media (max-width: 1024px) {
+                color: $colororange;
+                display: inline;
+            }
+            @media (max-width: 768px) {
+                display: block;
+                margin-top: 5px;
+            }
+            @media (max-width: 586px) {
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 18px;
+            }
+            svg {
+                width: 16.5px;
+                height: 16.5px;
+                fill: $colorgreysvg;
+                @media (max-width: 1024px) {
+                    fill: $colororange;
+                }
+                @media (max-width: 586px) {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+}
